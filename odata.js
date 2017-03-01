@@ -31,6 +31,12 @@ var Odata = function(config)
   return this;
 };
 
+Odata.prototype.includeCount = function(include)
+{
+  this.addQueryParameter('$count', include);
+  return this;
+};
+
 Odata.prototype.top = function(top)
 {
   this.addQueryParameter('$top', top);
