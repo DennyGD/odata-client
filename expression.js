@@ -75,6 +75,9 @@ var Expression = function(field, op, value)
     }
     if(value instanceof Expression) {
       right = `(${value.toString()})`;
+    } else if (value instanceof Date) {
+        const valueAsISOString = value.toISOString();
+        right = valueAsISOString;
     } else {
       right = `${escape(value)}`;
     }
